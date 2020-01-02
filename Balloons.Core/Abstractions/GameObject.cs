@@ -25,5 +25,12 @@ namespace Balloons.Core
         {
             Destroyed = true;
         }
+
+#if DEBUG
+        public override string ToString()
+        {
+            return GetType().Name;
+        } 
+#endif
     }
 }

@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 namespace Balloons.Core
 {
-    public interface ContentLoader
+    public abstract class ContentLoader
     {
-        Dictionary<string, Texture2D> LoadTextures(ContentManager value);
+        public abstract Dictionary<string, Texture2D> LoadTextures(ContentManager value);
     }
 }

@@ -9,7 +9,7 @@
             this.Behaviors = Behaviors;
         }
 
-        public void Update()
+        public override void Update()
         {
             for(var i = 0; i < Behaviors.Length; i++)
             {

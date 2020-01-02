@@ -1,7 +1,7 @@
 ﻿namespace Balloons.Core
 {
-    public interface Behavior
+    public abstract class Behavior
     {
-        void Update();
+        public abstract void Update();
     }
 }

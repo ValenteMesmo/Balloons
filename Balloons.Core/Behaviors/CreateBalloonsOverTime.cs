@@ -15,7 +15,7 @@ namespace Balloons.Core
             this.world = world;
         }
 
-        public void Update()
+        public override void Update()
         {
             counter += 1;
 

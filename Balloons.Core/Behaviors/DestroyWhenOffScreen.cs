@@ -9,7 +9,7 @@
             this.obj = obj;
         }
 
-        public void Update()
+        public override void Update()
         {
             if (obj.Y < -1200)
             {

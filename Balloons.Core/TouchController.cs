@@ -15,7 +15,7 @@ namespace Balloons.Core
             this.camera = camera;
         }
 
-        public IEnumerable<Vector2> GetTouches() => touches;
+        public override IEnumerable<Vector2> GetTouches() => touches;
 
         public void Update()
         {

@@ -16,7 +16,7 @@ namespace Balloons.Core
             this.obj = obj;
         }
 
-        public void Update()
+        public override void Update()
         {
             Sprite.targetRectangle = new Rectangle(
                 obj.X

@@ -14,7 +14,7 @@ namespace Balloons.Core
             this.obj = obj;
         }
 
-        public void Update()
+        public override void Update()
         {
             foreach(var touch in inputs.GetTouches())
             {

@@ -9,7 +9,7 @@
             this.obj = obj;
         }
 
-        public void Update()
+        public override void Update()
         {
             obj.Y -= GameConstants.Speed;
         }

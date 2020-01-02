@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace Balloons.Core
 {
-    public interface TouchInputs
+    public abstract class TouchInputs
     {
-        public IEnumerable<Vector2> GetTouches();
+        public abstract IEnumerable<Vector2> GetTouches();
     }
 }

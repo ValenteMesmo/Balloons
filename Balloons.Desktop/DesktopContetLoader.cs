@@ -8,7 +8,7 @@ namespace Balloons.Desktop
 {
     public class DesktopContetLoader : ContentLoader
     {
-        public Dictionary<string, Texture2D> LoadTextures(ContentManager contentManager)
+        public override Dictionary<string, Texture2D> LoadTextures(ContentManager contentManager)
         {
             var result = new Dictionary<string, Texture2D>();
             

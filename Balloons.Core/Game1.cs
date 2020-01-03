@@ -40,6 +40,11 @@ namespace Balloons.Core
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             World.AddObject(new BalloonFactory(World));
+            World.AddObject(new FrameCounter(new TextSprite
+            {
+                Font = font,
+                Position = new Vector2(100, -500)
+            }));
         }
 
         protected override void UnloadContent()
@@ -51,7 +56,7 @@ namespace Balloons.Core
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            World.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            World.Update();
 
             base.Update(gameTime);
         }
@@ -71,27 +76,8 @@ namespace Balloons.Core
 
             for (var i = 0; i < World.Objects.Length; i++)
             {
-
                 foreach (var spriteData in World.Objects[i].Sprites)
-                    spriteBatch.Draw(
-                        spriteData.texture
-                        , spriteData.targetRectangle
-                        , spriteData.sourceRectangle
-                        , Color.White);
-
-#if DEBUG
-                spriteBatch.DrawString(
-                      font
-                      , World.Objects[i].ToString()
-                      , new Vector2(World.Objects[i].X, World.Objects[i].Y)
-                      , Color.Blue
-                      , 0
-                      , Vector2.Zero
-                      , 5
-                      , SpriteEffects.None
-                      , 0
-                  );
-#endif
+                    spriteData.Draw(spriteBatch);
             }
 
             spriteBatch.End();

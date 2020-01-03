@@ -11,7 +11,7 @@ namespace Balloons.Core
         //public int Height { get; set; }
         public bool Destroyed { get; private set; }
 
-        public List<SpriteData> Sprites = new List<SpriteData>();
+        public List<Drawaaaaa> Sprites = new List<Drawaaaaa>();
 
         protected Behavior Behavior { get; set; }
 

@@ -11,7 +11,6 @@ namespace Balloons.Core
 
         public readonly Camera camera;
         public readonly TouchController TouchInputs;
-        public FramerateCounter FramerateCounter = new FramerateCounter();
 
         public World(Camera camera, Dictionary<string, Texture2D> Textures)
         {
@@ -25,7 +24,7 @@ namespace Balloons.Core
             objectsInternalList.Add(obj);
         }
 
-        public void Update(float ElapsedGameTimeTotalSeconds)
+        public void Update()
         {
             TouchInputs.Update();
 
@@ -41,8 +40,6 @@ namespace Balloons.Core
             }
 
             camera.Update();
-
-            FramerateCounter.Update(ElapsedGameTimeTotalSeconds);
         }
     }
 }

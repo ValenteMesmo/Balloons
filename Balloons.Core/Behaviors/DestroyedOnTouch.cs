@@ -3,15 +3,17 @@ using System;
 
 namespace Balloons.Core
 {
-    public class DestroyedOnTouch : Behavior
+    public class KillOnTouch : Behavior
     {
         private readonly TouchInputs inputs;
         private readonly GameObject obj;
+        private readonly ObjectState state;
 
-        public DestroyedOnTouch(GameObject obj, TouchInputs inputs)
+        public KillOnTouch(GameObject obj, TouchInputs inputs, ObjectState state)
         {
             this.inputs = inputs;
             this.obj = obj;
+            this.state = state;
         }
 
         public override void Update()
@@ -30,7 +32,7 @@ namespace Balloons.Core
                     if (GameConstants.Speed > GameConstants.maxSpeed)
                         GameConstants.Speed = GameConstants.maxSpeed;
 
-                    obj.Destroy();
+                    state.Value = Balloon.Dying;
                 }
             }
         }

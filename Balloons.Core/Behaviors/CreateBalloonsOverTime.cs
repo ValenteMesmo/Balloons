@@ -26,19 +26,28 @@ namespace Balloons.Core
                 var ballonY = 700;
                 var ballonX = random.Next(0, 6) * GameConstants.BalloonSize;
 
-                var sprites = new List<SpriteData>();
+                var idleAnimation = new List<SpriteData>();
+                var deathAnimation = new List<SpriteData>();
+
                 for (int i = 0; i < 5; i++)
                 {
-                    sprites.Add(new SpriteData(world.Textures["coin"])
+                    idleAnimation.Add(new SpriteData(world.Textures["coin"])
                     {
                         sourceRectangle = new Rectangle(i* 200, 0, 200, 210),
+                        targetRectangle = new Rectangle(ballonX, ballonY, GameConstants.BalloonSize, GameConstants.BalloonSize)
+                    });
+
+                    deathAnimation.Add(new SpriteData(world.Textures["coin"])
+                    {
+                        sourceRectangle = new Rectangle(i * 200, 200, 200, 210),
                         targetRectangle = new Rectangle(ballonX, ballonY, GameConstants.BalloonSize, GameConstants.BalloonSize)
                     });
                 }
 
                 var ballon = new Balloon(                    
                     world.TouchInputs
-                    , sprites.ToArray());
+                    , idleAnimation.ToArray()
+                    , deathAnimation.ToArray());
                 ballon.X = ballonX;
                 ballon.Y = ballonY;
                 world.AddObject(ballon);

@@ -2,7 +2,7 @@
 {
     public class MultiBehavior : Behavior
     {
-        private readonly Behavior[] Behaviors;
+        public readonly Behavior[] Behaviors;
 
         public MultiBehavior(params Behavior[] Behaviors)
         {

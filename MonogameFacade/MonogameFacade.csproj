@@ -8,15 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Content\bin\**" />
-    <Compile Remove="Content\obj\**" />
-    <EmbeddedResource Remove="Content\bin\**" />
-    <EmbeddedResource Remove="Content\obj\**" />
-    <None Remove="Content\bin\**" />
-    <None Remove="Content\obj\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Content\ContentDesktop.mgcb" />
   </ItemGroup>
 
@@ -30,9 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Balloons.Core\Balloons.Core.csproj" />
     <ProjectReference Include="..\MonogameFacade.Core\MonogameFacade.Core.csproj" />
-    <ProjectReference Include="..\MonogameFacade.Desktop\MonogameFacade.Desktop.csproj" />
   </ItemGroup>
 
 </Project>

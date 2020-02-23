@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D70AB39B-88EA-41DC-B9FB-9EA6ECE27CE6}</ProjectGuid>
+    <ProjectGuid>{39D1C2B3-EF85-43B4-A102-1BDF5B980180}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <IntermediateOutputPath>C:\Users\valen\AppData\Local\Temp\vs4077.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,6 +44,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <IntermediateOutputPath>C:\Users\valen\AppData\Local\Temp\vs4077.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -58,9 +60,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity1.cs" />
-    <Compile Include="AndroidContentLoader.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\font.spritefont" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
@@ -69,7 +75,6 @@
     <AndroidResource Include="Resources\Drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
     <Folder Include="Resources\Layout\" />
   </ItemGroup>
   <ItemGroup>
@@ -79,16 +84,36 @@
     <AndroidResource Include="Resources\Values\Styles.xml" />
   </ItemGroup>
   <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Balloons.Core\Balloons.Core.csproj">
-      <Project>{e30fa1fb-3a6a-4174-8216-dbd3e6acd3cd}</Project>
+      <Project>{92536a12-d6a6-4e69-ac8e-cbe79f0559cb}</Project>
       <Name>Balloons.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MonogameFacade.Android\MonogameFacade.Android.csproj">
+      <Project>{bf363896-8546-4ba9-9115-f620ba953121}</Project>
+      <Name>MonogameFacade.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MonogameFacade.Core\MonogameFacade.Core.csproj">
+      <Project>{cd774aa1-dbc8-4c39-b4cd-b1201bee5bb8}</Project>
+      <Name>MonogameFacade.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <MonoGameContentReference Include="..\Balloons.Core\Content\Android.Content.mgcb">
-      <Link>Content\Android.Content.mgcb</Link>
-    </MonoGameContentReference>
-    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Content\Textures\btn.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Textures\btn_small.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Textures\eyes.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Textures\skull.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

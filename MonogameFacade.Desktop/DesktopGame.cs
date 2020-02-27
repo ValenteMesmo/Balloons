@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 
 namespace MonogameFacade
@@ -36,6 +37,12 @@ namespace MonogameFacade
             previousUpdate = currentUpdate;
 
             accumulator = accumulator + delta;
+
+
+            Touches.Clear();
+            var mouse = Mouse.GetState();
+            if (mouse.LeftButton == ButtonState.Pressed)
+                Touches.Add(Camera.GetWorldPosition( mouse.Position.ToVector2()));
 
             if (accumulator >= dt)
             {

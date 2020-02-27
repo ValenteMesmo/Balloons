@@ -1,6 +1,7 @@
 ﻿using Android.Content.Res;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input.Touch;
 using System;
 
 namespace MonogameFacade
@@ -24,16 +25,24 @@ namespace MonogameFacade
             base.Initialize();
         }
 
+        protected override void Update(GameTime gameTime)
+        {
+            var state = TouchPanel.GetState();
+
+            Touches.Clear();
+            for (int i = 0; i < state.Count; i++)
+            {
+                if (state[i].State > 0)
+                    Touches.Add(Camera.GetWorldPosition(state[i].Position));
+            }
+
+            base.Update(gameTime);
+        }
+
         protected override void Draw(GameTime gameTime)
         {
-            //var currentUpdate = DateTime.Now;
-            //var delta = (currentUpdate - previousUpdate).TotalSeconds;
-            //previousUpdate = currentUpdate;
-
             FrameCounter.Update(gameTime.ElapsedGameTime.TotalSeconds);
             base.Draw(gameTime);
         }
-
-        DateTime previousUpdate = DateTime.Now;
     }
 }

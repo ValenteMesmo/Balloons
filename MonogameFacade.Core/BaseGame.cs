@@ -9,12 +9,12 @@ namespace MonogameFacade
     public abstract class BaseGame : Game
     {
         public FrameCounter FrameCounter = new FrameCounter();
-        public Bag<GameObject> Objects = new Bag<GameObject>(100 * 100 * 10);
-        public Bag<Renderer> Renderers = new Bag<Renderer>(100 * 100 * 10);
-        //public List<Renderer> RenderersWithEffect1 = new List<Renderer>();
+        public Bag<GameObject> Objects = new Bag<GameObject>();
+        public Bag<Renderer> Renderers = new Bag<Renderer>();
+        public Bag<Vector2> Touches = new Bag<Vector2>();
 
         private readonly ContentLoader contentLoader;
-        private readonly Camera Camera;
+        public readonly Camera Camera;
 
         protected GraphicsDeviceManager graphics;
         public Dictionary<string, Texture2D> Texutes { get; private set; }

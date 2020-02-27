@@ -9,6 +9,7 @@ namespace MonogameFacade
         public string Text;
         public float scale = 10;
         public Rectangle Target;
+        public Color Color = Color.White;
 
         public override void Draw(SpriteBatch batch)
         {
@@ -16,7 +17,7 @@ namespace MonogameFacade
                 Font
                 , Text
                 , new Vector2(100, 100)
-                , Color.Black
+                , Color
                 , 0
                 , Vector2.Zero
                 , scale

@@ -6,7 +6,7 @@ namespace MonogameFacade
     public class SpriteRenderer : Renderer
     {
         public Texture2D Texture;
-        public Color Color;
+        public Color Color = Color.White;
         public Rectangle? Source;
         public Rectangle Target;
 

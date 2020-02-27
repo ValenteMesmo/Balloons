@@ -31,7 +31,7 @@
             else
             {
                 lowValue = 60;
-                text.Text = string.Format(@"{0:0.00}", game.FrameCounter.CurrentFramesPerSecond);
+                text.Text = string.Format(@"{0:0.00}", game.FrameCounter.CurrentFramesPerSecond);                
             }
             game.Renderers.Add(text);
         }
